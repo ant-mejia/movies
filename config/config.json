@@ -1,7 +1,8 @@
 {
   "development": {
+    "username": "antmejia",
     "password": null,
-    "database": "movies_app_development",
+    "database": "movies_app",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
