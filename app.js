@@ -6,20 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var users = require('./routes/user');
 
 const session = require('express-session');
 const passport = require('passport');
-
-const index = require('./routes/index');
 const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
 const app = express();
 
 // load environment variables
 require('dotenv').config();
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
