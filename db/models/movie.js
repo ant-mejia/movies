@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   var Movie = sequelize.define('Movie', {
     title: DataTypes.STRING(255),
     synopsis: DataTypes.TEXT,
-    director_id: DataTypes.NUMBER
+    director_id: DataTypes.BIGINT
   }, {
     classMethods: {
       associate: function(models) {

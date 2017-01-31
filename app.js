@@ -6,12 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 
-var app = express();
 
 //requiring routes (david)
 var movies = require('./routes/movies');
+
+var app = express();
+
+// //requiring routes (david)
+// var movies = require('./routes/movies');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +35,7 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+
 //adding our routes
 app.use('/movies', movies);
 

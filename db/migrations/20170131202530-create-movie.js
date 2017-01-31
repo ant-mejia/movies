@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       director_id: {
-        type: Sequelize.NUMBER
+        type: Sequelize.BIGINT
       },
       createdAt: {
         allowNull: false,
