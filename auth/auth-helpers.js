@@ -13,6 +13,12 @@ function loginRedirect(req, res, next) {
   return next();
 }
 
+function loginRequired(req, res, next) {
+  if (!req.user) res.redirect('/auth/login');
+
+  return next();
+}
+
 function createUser(req, res) {
   const salt = bcrypt.genSaltSync();
   const hash = bcrypt.hashSync(req.body.password, salt);
@@ -30,5 +36,6 @@ function createUser(req, res) {
 module.exports = {
   comparePass,
   loginRedirect,
+  loginRequired,
   createUser
 };
