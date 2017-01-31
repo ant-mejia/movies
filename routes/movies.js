@@ -32,10 +32,9 @@ router.post('/movies', function(req, res, next) {
 
 //get the movies by id
 router.get('/:id', function(req, res, next) {
-models.Movie.findById(req.params.id).then(function(id) {
+models.Movie.findById(req.params.id).then(function(data) {
   res.render('movies/show', {
-    title: 'Movies',
-    movies:data
+    movie:data
   });
 });
 });

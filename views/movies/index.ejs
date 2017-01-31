@@ -5,13 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-hey i work
+Movie list
 
 <div>
   <div class="wrapper">
 <% movies.forEach(function(data) { %>
 
-    <li><span> <%= data.title %> </span></li>
+    <li><span>
+      <a href="<%= '/movies/' + data.id %>" > <%= data.title %> </a>
+    </span></li>
+
+  <li><span>
+    <%= data.synopsis %>
+  </span></li>
+
 </div>
 <% }) %>
 </div>
