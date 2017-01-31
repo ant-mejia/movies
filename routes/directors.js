@@ -1,15 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../db/models/index');
 
 /* GET directors listing. */
 router.get('/', function(req, res, next) {
-  models.Directors.findAll({}).then(function(directors) {
+  models.Director.findAll({}).then(function(directors) {
     res.render('directors/index', {
-      title: 'directors',
-      name: name
+      title: 'Directors',
+      directors: directors
     });
   });
 });
+
+
 router.get('/new', function(req, res, next) {
   res.render('directors/new');
 });
