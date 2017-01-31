@@ -1,11 +1,12 @@
 {
   "development": {
+    "username": "david",
     "password": null,
-    "database": "movies_app_development",
+    "database": "movies_app",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
-  "production": {
+  "production":{
     "use_env_variable": "DATABASE_URL"
   }
 }
