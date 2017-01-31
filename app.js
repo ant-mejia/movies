@@ -7,11 +7,15 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 
-
+//davids method override, it makes it so you can edit things
+var methodOverride = require('method-override');
 //requiring routes (david)
 var movies = require('./routes/movies');
 
 var app = express();
+
+//davids app.use method.override to edit things
+app.use(methodOverride('_method'));
 
 // //requiring routes (david)
 // var movies = require('./routes/movies');

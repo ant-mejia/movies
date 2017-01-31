@@ -33,15 +33,8 @@ models.Movie.findById(req.params.id).then(function(data) {
 });
 });
 
-
-///////////////////////////////////////////////////////////
-//currently not working
-///////////////////////////////////////////////////////////
-
-
-//edit the pages
-
-//edit the show page
+//editing pages
+//edit the show page (router for edit page)
 router.get('/:id/edit', function(req, res, next) {
   models.Movie.findById(req.params.id).then(function(data) {
     res.render('movies/edit', {
@@ -50,16 +43,23 @@ router.get('/:id/edit', function(req, res, next) {
   });
 });
 
-//edit the page?
+
+//edit allow the edit to work and redirects user to info page
 router.put('/:id', function(req, res, next) {
    models.Movie.update({
-     id: req.body.id,
      title: req.body.title,
      synopsis: req.body.synopsis
    }, { where: { id: req.params.id } }).then(function() {
-     res.redirect('/movies/index/' + req.params.id);
+     res.redirect('/movies/' + req.params.id);
    });
  });
+
+
+///////////////////////////////////////////////////////////
+//currently not working
+///////////////////////////////////////////////////////////
+
+
 
 //displays a new form to enter in the database
  router.get('/movies/new', function(req, res, next) {

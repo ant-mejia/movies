@@ -1,3 +1,27 @@
-<body>
-  hey im an edit
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Edit </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <a href="/movies">main page</a>
+    <p><span> <a href=" <%= '/movies/' + movie.id%>"> return to movie profile <a> </span></p>
+
+  <body>
+<form action="<%= '/movies/' + movie.id + '?_method=PUT' %>" method="POST">
+  <label>
+    Movie Title
+    <input type="text" name="title" value="<%= movie.title %>"/>
+  </label>
+  <label>
+    Synopsis
+  <input type="text" name="synopsis" value="<%=movie.synopsis %>" />
+  </label>
+  <input type="submit" />
+</form>
+
+
+  </body>
+
+
+</html>
