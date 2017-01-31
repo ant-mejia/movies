@@ -24,12 +24,6 @@ router.post('/movies', function(req, res, next) {
   })
 });
 
-///////////////////////////////////////////////////////////
-//currently not working
-///////////////////////////////////////////////////////////
-
-
-
 //get the movies by id
 router.get('/:id', function(req, res, next) {
 models.Movie.findById(req.params.id).then(function(data) {
@@ -39,13 +33,19 @@ models.Movie.findById(req.params.id).then(function(data) {
 });
 });
 
+
+///////////////////////////////////////////////////////////
+//currently not working
+///////////////////////////////////////////////////////////
+
+
 //edit the pages
 
 //edit the show page
 router.get('/:id/edit', function(req, res, next) {
-  models.Movie.findById(req.params.id).then(function(user) {
+  models.Movie.findById(req.params.id).then(function(data) {
     res.render('movies/edit', {
-       movies: data
+       movie: data
      });
   });
 });

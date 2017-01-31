@@ -6,10 +6,11 @@
   </head>
   <body class ="profilebody">
     <h1 class="profilename"> <%= movie.title %>'s</h1>
-
-    <p> <%=movie.title %> </p>
+    <p>Synopsis:</p>
     <p> <%=movie.synopsis %> </p>
 
+
+  <span> <a href=" <%= '/movies/' + movie.id + '/edit/' %>"> Edit Movie <a> </span>
 
   </body>
 </html>
