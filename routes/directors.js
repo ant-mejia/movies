@@ -18,7 +18,7 @@ router.get('/new', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  models.Directors.create({
+  models.Director.create({
       name: req.body.name
   }).then(function() {
     res.redirect('/directors')
@@ -26,19 +26,19 @@ router.post('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-  models.Directors.findById(req.params.id).then(function(directors) {
-    res.render('directors/show', { name: name });
+  models.Director.findById(req.params.id).then(function(director) {
+    res.render('directors/show', { director: director });
   });
 });
 
 router.get('/:id/edit', function(req, res, next) {
-  models.Directors.findById(req.params.id).then(function(directors) {
-    res.render('directors/edit', { name: name });
+  models.Director.findById(req.params.id).then(function(director) {
+    res.render('directors/edit', { director: director });
   });
 });
 
 router.put('/:id', function(req, res, next) {
-  models.Directors.update({
+  models.Director.update({
     name: req.body.name
   }, { where: { id: req.params.id } }).then(function() {
     res.redirect('/directors/' + req.params.id);
@@ -46,7 +46,7 @@ router.put('/:id', function(req, res, next) {
 });
 
 router.delete('/:id', function(req, res, next) {
-  models.Directors.destroy({
+  models.Director.destroy({
     where: { id: req.params.id }
   }).then(function(directors) {
     res.redirect('/directors');
