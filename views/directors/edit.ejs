@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= 'Directors - Edit ' + directors.name + "'s Profile" %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Create a user!</h1>
+    <form action="<%= '/directors/' + directors.id + '?_method=PUT' %>" method="POST">
+      <div>
+        <label>
+          Name
+          <input type="text" name="name" value="<%= directors.name %>" />
+        </label>
+      </div>
+      <a href="<%= '/directors/' + directors.id %>">Cancel</a>
+      <input type="submit" value="Save" />
+      <form action="<%= '/directors/' + directors.id + '?_method=DELETE' %>" method="POST">
+        <input type="submit" value="Delete user" />
+      </form>
+    </form>
+  </body>
+</html>

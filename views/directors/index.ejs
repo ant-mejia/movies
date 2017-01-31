@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies - All Directors</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to Directors</h1>
+    <div>
+      <a href="/directors/new">Create a director</a>
+    </div>
+    <% directors.forEach(function(directors) { %>
+      <div>
+        <a href="<%= '/directors/' + directors.id %>">
+          <%= directors.name %>
+        </a>
+      </div>
+    <% }) %>
+  </body>
+</html>

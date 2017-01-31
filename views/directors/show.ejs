@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= 'Movies - ' + directors.name + "'s Profile" %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= directors.name + ' ' + directors.name %></h1>
+    <h3>Name: <%= directors.name %></h3>
+    <!-- <h3>Date of birth: <%= moment(user.dob).format('LL') %></h3> -->
+    <a href="<%= '/directors/' + directors.id + '/edit' %>">Edit user info</a>
+    <a href="/users">Back to users</a>
+  </body>
+</html>
