@@ -28,16 +28,6 @@ router.post('/movies', function(req, res, next) {
 //currently not working
 ///////////////////////////////////////////////////////////
 
-//supposed to post movies
-router.post('/movies', function(req, res, next) {
-  models.Movie.create({
-  id: req.body.id,
-  title: req.body.title,
-  synopsis: req.body.synopsis
-  }).then(function(){
-    res.redirect('/movies/index')
-  })
-});
 
 
 //get the movies by id
