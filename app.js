@@ -6,6 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+
+
+//davids method override, it makes it so you can edit things
+var methodOverride = require('method-override');
+//requiring routes (david)
+var movies = require('./routes/movies');
 var users = require('./routes/user');
 
 const session = require('express-session');
@@ -16,6 +22,12 @@ const app = express();
 
 // load environment variables
 require('dotenv').config();
+
+//davids app.use method.override to edit things
+app.use(methodOverride('_method'));
+
+// //requiring routes (david)
+// var movies = require('./routes/movies');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,6 +55,10 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+
+
+//adding our routes
+app.use('/movies', movies);
 app.use('/users', users);
 app.use('/', index);
 app.use('/in', authRoutes);
@@ -54,6 +70,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
