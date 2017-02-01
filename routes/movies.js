@@ -74,6 +74,16 @@ router.put('/:id', function(req, res, next) {
  });
 
 
+ //posts to database
+    router.post('/', function(req, res, next) {
+     models.Movie.create({
+       title: req.body.title,
+       synopsis: req.body.synopsis
+     }).then(function(){
+       res.redirect('/movies/')
+     })
+   });
+
 ///////////////////////////////////////////////////////////
 //currently not working
 ///////////////////////////////////////////////////////////
@@ -81,22 +91,12 @@ router.put('/:id', function(req, res, next) {
 
 
 
-//posts to database
-   router.post('/', function(req, res, next) {
-    models.Movie.create({
-      title: req.body.title,
-      synopsis: req.body.synopsis
-    }).then(function(){
-      res.redirect('/movies/')
-    })
-  });
-
   // deletes
   router.delete('/:id', function(req, res, next) {
   models.Movie.destroy({
     where:{ id: req.params.id }
-  }).then(function(user){
-    res.redirect('/movies/index');
+  }).then(function(data){
+    res.redirect('/movies');
   });
 });
 ///////////////////////////////////////////////////////////
