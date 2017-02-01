@@ -26,7 +26,6 @@ const session = require('express-session');
 const passport = require('passport');
 const authRoutes = require('./routes/auth.js');
 const userRoutes = require('./routes/user.js');
-const app = express();
 
 // load environment variables
 require('dotenv').config();
