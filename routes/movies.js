@@ -3,7 +3,7 @@ var router = express.Router();
 var models = require('../db/models/index');
 
 
-
+//loads page
 router.get('/', function(req, res, next) {
   models.Movie.findAll({}).then(function(data) {
     res.render('movies/index', {
@@ -23,6 +23,25 @@ router.post('/movies', function(req, res, next) {
     res.redirect('/movies/index')
   })
 });
+
+///////////////////////////////////////////////////////////
+//  Code reads top down, so new has to be above /id or
+// it reads id/new understand?
+///////////////////////////////////////////////////////////
+
+//displays a new form to enter in the database
+ router.get('/new', function(req, res, next) {
+     res.render('movies/new', {
+       title: 'new movie'
+     });
+   });
+
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 
 //get the movies by id
 router.get('/:id', function(req, res, next) {
@@ -61,21 +80,14 @@ router.put('/:id', function(req, res, next) {
 
 
 
-//displays a new form to enter in the database
- router.get('/movies/new', function(req, res, next) {
-     res.render('movies/new', {
-       title: 'hey now'
-     });
-   });
 
 //posts to database
    router.post('/', function(req, res, next) {
     models.Movie.create({
-      id: req.body.id,
       title: req.body.title,
       synopsis: req.body.synopsis
     }).then(function(){
-      res.redirect('/movies/index')
+      res.redirect('/movies/')
     })
   });
 

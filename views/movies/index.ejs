@@ -7,6 +7,8 @@
   <body>
 Movie list
 
+<p><a href=" /movies/new ">Add a movie</a></p>
+
 <div>
   <div class="wrapper">
 <% movies.forEach(function(data) { %>
@@ -14,7 +16,7 @@ Movie list
     <li><span>
       <a href="<%= '/movies/' + data.id %>" > <%= data.title %> </a>
     </span></li>
-    
+
 </div>
 <% }) %>
 </div>
