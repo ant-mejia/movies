@@ -7,12 +7,21 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 
+
 //davids method override, it makes it so you can edit things
 var methodOverride = require('method-override');
 //requiring routes (david)
 var movies = require('./routes/movies');
+var users = require('./routes/user');
 
-var app = express();
+const session = require('express-session');
+const passport = require('passport');
+const authRoutes = require('./routes/auth.js');
+const userRoutes = require('./routes/user.js');
+const app = express();
+
+// load environment variables
+require('dotenv').config();
 
 //davids app.use method.override to edit things
 app.use(methodOverride('_method'));
@@ -29,6 +38,13 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({
+  secret: process.env.SECRET_KEY,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cookieParser());
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
@@ -40,8 +56,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 
+
 //adding our routes
 app.use('/movies', movies);
+app.use('/users', users);
+app.use('/', index);
+app.use('/in', authRoutes);
+app.use('/user', userRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
