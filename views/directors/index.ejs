@@ -2,19 +2,26 @@
 <html>
   <head>
     <title>Movies - All Directors</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <h1>Welcome to Directors</h1>
-    <div>
+    <nav>
+    <div class="nav-wrapper">
+    <a href="/directors" class="brand-logo center">Welcome to Directors</a>
+    </div>
+    </nav>
+    <div class="chip">
       <a href="/directors/new">Create a director</a>
     </div>
     <% directors.forEach(function(directors) { %>
-      <div>
-        <a href="<%= '/directors/' + directors.id %>">
+      <div class="collection">
+        <a href="<%= '/directors/' + directors.id %>" class="collection-item">
           <%= directors.name %>
         </a>
-      </div>
-    <% }) %>
+        </div>
+      <% }) %>
+
   </body>
 </html>
