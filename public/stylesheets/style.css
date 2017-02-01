@@ -1,2 +1,16 @@
+<<<<<<< HEAD
+.chip {
+  margin-left: 20px;
+}
+main{
+  flex: 1 0 auto;
+}
+div.image {
+   content:url("../images/directors.jpg");
+   /*max-width: 500px;*/
+}​
+/*# sourceMappingURL=style.css.map */
+=======
 
 /*# sourceMappingURL=style.css.map */
+>>>>>>> master

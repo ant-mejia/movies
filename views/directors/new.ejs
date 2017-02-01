@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Directors - Create User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+  <nav>
+    <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">Create a user!</a>
+    </div>
+    </nav>
+    <form action="/directors" method="POST">
+      <div class="row">
+      <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+        <label clas="active"></label>
+          <input id"icon_prefix" type="text" name="name"/>
+
+      </div>
+      <a href="/directors" class="waves-effect waves-light btn">Cancel</a>
+      <input type="submit" value="Create user" class="waves-effect waves-light btn"/>
+    </form>
+  </body>
+</html>

@@ -1,17 +1,16 @@
 {
   "development": {
-    "username": "root",
+<<<<<<< HEAD:db/config.json
+    "username": "alexdiaz",
+=======
+    "username": "antmejia",
+>>>>>>> master:config/config.json
     "password": null,
-    "database": "database_development",
+    "database": "movies_app",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "use_env_variable": "DATABASE_URL",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "use_env_variable": "DATABASE_URL"
   }
 }

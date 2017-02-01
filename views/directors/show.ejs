@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= 'Movies - ' + director.name + "'s Profile" %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <!-- <h1><%= director.name %></h1> -->
+    <div class="container">
+    <h3>Name: <%= director.name %></h3>
+    <a href="<%= '/directors/' + director.id + '/edit' %>" class="waves-effect waves-light btn">Edit directors info</a>
+    <a href="/directors" class="waves-effect waves-light btn">Back to directors</a>
+    <div class="image"></div>​
+  </body>
+</html>

@@ -4,8 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override')
 
 var index = require('./routes/index');
+<<<<<<< HEAD
+var users = require('./routes/users');
+var directors = require('./routes/directors');
+
+var app = express();
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
+=======
 
 
 //davids method override, it makes it so you can edit things
@@ -28,6 +37,7 @@ app.use(methodOverride('_method'));
 
 // //requiring routes (david)
 // var movies = require('./routes/movies');
+>>>>>>> master
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -60,9 +70,13 @@ app.use('/', index);
 //adding our routes
 app.use('/movies', movies);
 app.use('/users', users);
+<<<<<<< HEAD
+app.use('/directors', directors);
+=======
 app.use('/', index);
 app.use('/in', authRoutes);
 app.use('/user', userRoutes);
+>>>>>>> master
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
