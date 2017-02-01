@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= movie.title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class ="profilebody">
+    <h1 class="profilename"> <%= movie.title %></h1>
+    <p>Synopsis:</p>
+    <p> <%=movie.synopsis %> </p>
+
+
+  <span> <a href=" <%= '/movies/' + movie.id + '/edit/' %>"> Edit Movie <a> </span>
+
+  </body>
+</html>
