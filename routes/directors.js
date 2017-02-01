@@ -48,7 +48,7 @@ router.put('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   models.Director.destroy({
     where: { id: req.params.id }
-  }).then(function(directors) {
+  }).then(function(director) {
     res.redirect('/directors');
   });
 });
