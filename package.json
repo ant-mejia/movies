@@ -17,13 +17,9 @@
     "ejs": "~2.5.2",
     "express": "~4.14.0",
     "express-session": "^1.15.0",
-<<<<<<< HEAD
     "materialize-css": "^0.98.0",
     "method-override": "^2.3.7",
-=======
-    "method-override": "^2.3.7",
     "materialize-sass-origin": "^0.97.5",
->>>>>>> master
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.9.8",
     "nodemon": "^1.11.0",
