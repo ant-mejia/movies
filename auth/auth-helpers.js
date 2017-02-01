@@ -14,7 +14,7 @@ function loginRedirect(req, res, next) {
 }
 
 function loginRequired(req, res, next) {
-  if (!req.user) res.redirect('/auth/login');
+  if (!req.user) res.redirect('/in/login');
 
   return next();
 }
